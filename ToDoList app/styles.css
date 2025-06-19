@@ -17,6 +17,7 @@
 	background-color: #fff;
 	width: 100%;
 	max-width: 35rem;
+	max-height: 80%;
 	margin: 6rem auto 1rem;
 	padding: 40px 30px 70px;
 	border-radius: 10px;
@@ -62,3 +63,52 @@ button {
 	color: #fff;
 	cursor: pointer;
 }
+
+
+ul li {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	list-style: none;
+	font-size: 1em;
+	padding: 12px 8px 12px 50px;
+	user-select: none;
+	cursor: pointer;
+	position: relative;
+}
+
+ul li::before {
+	content: '';
+	width: 28px;
+	aspect-ratio: 1 / 1;
+	background: no-repeat center url('https://cdn1.iconfinder.com/data/icons/material-core/20/check-circle-outline-blank-1024.png');
+	background-size: contain;
+	position: absolute ;
+	top: 8px;
+	left: 8px;
+}
+
+ul li.checked {
+	color: #555;
+	text-decoration: line-through;
+}
+
+ul li.checked::before {
+	background-image: url('https://cdn1.iconfinder.com/data/icons/material-core/20/check-circle-outline-1024.png');
+}
+
+ul li svg {
+	width: 2rem;
+	height: 2rem;
+	border-radius: 50%;
+	padding: 0.3rem;
+}
+
+ul li svg:hover {
+	/* color:rgb(177, 32, 32); */
+	/* scale: 1.1; */
+	background-color: #edeef0;
+}
+
+
+
