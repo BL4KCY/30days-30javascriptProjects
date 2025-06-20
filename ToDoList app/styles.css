@@ -54,7 +54,7 @@ input {
 	padding: 10px;
 }
 
-button {
+.row button {
 	border: 0;
 	outline: 0;
 	padding: 1rem 50px;
@@ -105,10 +105,5 @@ ul li svg {
 }
 
 ul li svg:hover {
-	/* color:rgb(177, 32, 32); */
-	/* scale: 1.1; */
 	background-color: #edeef0;
 }
-
-
-
