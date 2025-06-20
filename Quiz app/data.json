@@ -1,0 +1,9 @@
+{
+	"question": "what's the name of capital of Morocco",
+	"answers" : [
+		{"answer": "Rabat", "correct" : "true"},
+		{"answer": "Benguerir", "correct" : "false"},
+		{"answer": "Sidi Slimane", "correct" : "false"},
+		{"answer": "Casablanca", "correct" : "false"}
+	]
+}
