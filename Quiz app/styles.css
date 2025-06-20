@@ -82,7 +82,6 @@ body {
 button[is-selected="true"]
 {
 	scale: 1.03;
-	transform: scaleX(-1);
 	color: #fff;
 	background-color: #171b5e;
 }
