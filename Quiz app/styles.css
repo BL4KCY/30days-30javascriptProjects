@@ -32,7 +32,6 @@ body {
 .answers {
 	display: flex;
 	flex-direction: column;
-	
 }
 
 .quiz-app h2 {
@@ -44,7 +43,7 @@ body {
 .answer-btn {
 	background-color: #fff;
 	color: #171b5e;
-	border: 1px solid #171b5e;
+	border: 1px solid #d7cfcf;
 	padding: 0.74rem 0.5rem;
 	margin-bottom: 1.3rem;
 	text-align: left;

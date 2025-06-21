@@ -1,9 +1,47 @@
-{
-	"question": "what's the name of capital of Morocco",
-	"answers" : [
-		{"answer": "Rabat", "correct" : "true"},
-		{"answer": "Benguerir", "correct" : "false"},
-		{"answer": "Sidi Slimane", "correct" : "false"},
-		{"answer": "Casablanca", "correct" : "false"}
-	]
-}
+[
+	{
+		"question": "what's the name of capital of Morocco?",
+		"answers" : [
+			{"answer": "Rabat", "correct" : "true"},
+			{"answer": "Benguerir", "correct" : "false"},
+			{"answer": "Sidi Slimane", "correct" : "false"},
+			{"answer": "Casablanca", "correct" : "false"}
+		]
+	},
+	{
+		"question": "How many bones do we have in an ear?",
+		"answers" : [
+			{"answer": "1", "correct" : "false"},
+			{"answer": "4", "correct" : "false"},
+			{"answer": "0", "correct" : "false"},
+			{"answer": "3", "correct" : "true"}
+		]
+	},
+	{
+		"question": "What is the smallest unit of matter?",
+		"answers" : [
+			{"answer": "Proton", "correct" : "false"},
+			{"answer": "Atom", "correct" : "true"},
+			{"answer": "Molecule", "correct" : "false"},
+			{"answer": "Electron", "correct" : "false"}
+		]
+	},
+	{
+		"question": "What does FIFA stand for in English?",
+		"answers" : [
+			{"answer": "Football International Federation Authority", "correct" : "false"},
+			{"answer": "International Federation of Association Football", "correct" : "true"},
+			{"answer": "Federation of International Football Associations", "correct" : "false"},
+			{"answer": " Federation of International Futbol Associations", "correct" : "false"}
+		]
+	},
+	{
+		"question": " What phone company produced the 3310?",
+		"answers" : [
+			{"answer": "Samsung", "correct" : "false"},
+			{"answer": "LG", "correct" : "false"},
+			{"answer": "Nokia", "correct" : "true"},
+			{"answer": "Motorola", "correct" : "false"}
+		]
+	}
+]
