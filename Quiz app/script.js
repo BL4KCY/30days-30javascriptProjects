@@ -2,6 +2,8 @@ const question = document.querySelector(".quiz-app > h2");
 const answers = document.querySelector('.answers');
 const check = document.querySelector('.check-btn');
 const next = document.querySelector('.next-btn');
+const replay = document.querySelector('.play-again');
+const resualt = document.querySelector('.resault');
 let	index = 0;
 let	score = 0;
 async function startTheApp() {
@@ -33,29 +35,52 @@ async function startTheApp() {
 	}
 	questionsListApply();
 
-	check.addEventListener('click', (e) => {
-		const selectedButton = 	answers.querySelector('[is-selected="true"]');
-											//----------------------index of the correct element------------------------//
-		const corretButon = answers.children[questionData[index].answers.findIndex(answer  => answer.correct === "true")];
-		console.log(selectedButton, corretButon);
+	function getSelectedAndCorrectButton() {
+		console.log(answers);
 		
-		selectedButton.style.background = 'red'
-		corretButon.style.background = 'green'
-		selectedButton.style.color = 'white'
-		corretButon.style.color = 'white'
+		return  {
+			selected: answers.querySelector('[is-selected="true"]'),
+			correct: answers.children[questionData[index].answers.findIndex(answer  => answer.correct === "true")]
+		}
+	}
+	check.addEventListener('click', (e) => {
+		const	button = getSelectedAndCorrectButton();
+		{
+			if (button.selected) {
+				button.selected.style.background = 'red'
+				button.selected.style.color = 'white'
+			}
+			button.correct.style.background = 'green'
+			button.correct.style.color = 'white'
+		}
 	})
 	
 	next.addEventListener('click', e => {
+		const button = getSelectedAndCorrectButton();
+		if (button.correct == button.selected) {
+			score++;
+			console.log(score);
+		}
 		if ((index + 1) == questionData.length) {
-			resaultPage()
+			resaultPage();
 		} else {
 			questionsListApply(++index);
 		}
 	})
 
-	function isCorrectAnswer(answerBtn) {
-		let quesIndex = Array.from(answers.children).indexOf(answerBtn);
-		return (questionData[index].answers[quesIndex].correct == 'true') ? true : false;
+	replay.addEventListener('click', e => {
+		index = 0;
+		score = 0;
+		resualt.style.display = replay.style.display = 'none';
+		answers.style.display = next.style.display = check.style.display = 'flex';
+		questionsListApply()
+	})
+
+	function resaultPage() {
+		question.textContent = 'Resault';
+		resualt.querySelector('h3').textContent = 'Score: ' + score + ' out of ' + questionData.length;
+		resualt.style.display = replay.style.display = 'block';
+		answers.style.display = next.style.display = check.style.display = 'none';
 	}
 }
 
