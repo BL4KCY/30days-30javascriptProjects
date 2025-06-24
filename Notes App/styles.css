@@ -23,4 +23,28 @@
 
 .container h1 .lucide-notebook {
 	margin-right: 1rem;
+	width: 4rem;
+	height: 4rem;
+}
+
+.container button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+	margin: 3rem 0;
+	font-size: 2em;
+	font-weight: 300;
+	border: 0;
+	outline: 0;
+	border-radius: 40px;
+	background: linear-gradient(#b158bf,#9a07f5);
+	color: #fff;
+	cursor: pointer;
+}
+
+.container button svg {
+	margin-right: 1rem;
+	width: 30px;
+	height: 30px;
 }
