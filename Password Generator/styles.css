@@ -1,0 +1,76 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+}
+
+body{
+	background-color: #00203A;
+	color: #fff;
+}
+
+.container {
+	margin: 12%;
+	width: 90%;
+	max-width: 700px;
+}
+
+.container h1 {
+	font-size: 45px;
+	font-weight: 500;
+}
+
+.container h1 span {
+	color: #028859;
+	border-bottom: 4px solid;
+	padding-bottom: 10px;
+}
+
+.display {
+	background-color: #fff;
+	color: #333;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-radius: 5px;
+	margin-top: 3rem;
+	margin-bottom: 2rem;
+	padding: 26px 20px;
+}
+
+#password {
+	flex: 1;
+	margin-right: 10px;
+	font-size: 24px;
+	outline: none;
+	border: none;
+}
+
+.lucide-copy {
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+}
+
+.container button .lucide-zap {
+	width: 30px;
+	height: 30px;
+	margin-right: 10px;
+}
+
+.container button {
+	border: 0;
+	outline: 0;
+	border-radius: 5px;
+	padding: 24px 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #fff;
+	background-color: #028859;
+	cursor: pointer;
+	font-size: 24px;
+	font-weight: 300;
+	padding: 16px 26px;
+}
