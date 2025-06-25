@@ -5,7 +5,6 @@ const titleMaxLenght = 30;
 createNoteBtn.addEventListener('click', event => {
 	const note = document.createElement('div');
 	const title = document.createElement('input');
-	// const titleP = document.createElement()
 	const content = document.createElement('textarea');
 	const del = document.createElement('i');
 	const date = new Date();
@@ -16,26 +15,15 @@ createNoteBtn.addEventListener('click', event => {
 	title.maxLength = 36;
 	title.value = 'Untitled | ' + Date().split('GMT')[0]
 	title.placeholder = 'Title'
-	title.oninput = e => {
-		SaveChanges();
-	}
-	title.onfocus = e => {
-		title.select();
-	}
+	title.setAttribute('oninput', 'SaveChanges();');
+	title.setAttribute('onfocus', 'select()');
 	content.className = 'note-content'
 	content.name = 'note'
 	content.placeholder = 'Content'
-	content.oninput = e => {
-		SaveChanges();
-	}
+	content.setAttribute('oninput', 'SaveChanges()');
 	del.className = 'delete-note-btn'
 	del.dataset.lucide = 'trash'
-	note.addEventListener('click', e => {
-		if (e.target.classList.contains('lucide') || e.target.parentElement.classList.contains('lucide')){
-			note.remove();
-			SaveChanges();
-		}
-	})
+	note.setAttribute('onclick', 'deleteNoteBtn(event)')
 	note.appendChild(title);
 	note.appendChild(content);
 	note.appendChild(del);
@@ -45,16 +33,39 @@ createNoteBtn.addEventListener('click', event => {
 	SaveChanges();
 })
 
+function deleteNoteBtn(e) {
+	if (e.target.classList.contains('lucide')) {
+		e.target.parentElement.remove()
+	}
+	if (e.target.parentElement.classList.contains('lucide')) {
+		e.target.parentElement.parentElement.remove()
+	}
+	SaveChanges();
+}
 
 function SaveChanges() {
-	console.log(notesContainer.innerHTML);
-	localStorage.setItem('note-data', notesContainer.innerHTML);
+	const values = {}
+	document.querySelectorAll('.note').forEach((el, i) => {
+		let elData = {
+			title: el.querySelector('.note-title').value,
+			content: el.querySelector('.note-content').value
+		}
+		values[i] = elData;
+	})
+	localStorage.setItem('note-data', JSON.stringify(values));
+	localStorage.setItem('note-html', notesContainer.innerHTML);
 }
 
 function loadData() {
-	const data = localStorage.getItem('note-data');
-	notesContainer.innerHTML = data
+	const data = JSON.parse(localStorage.getItem('note-data'));
+	console.log(data);
+	
+	const html = localStorage.getItem('note-html');
+	notesContainer.innerHTML = html;
+	notesContainer.querySelectorAll('.note').forEach((el, i) => {
+		el.querySelector('.note-title').value = data[i].title;
+		el.querySelector('.note-content').value = data[i].content;
+	})
 }
 
-
-// loadData();
+loadData();
