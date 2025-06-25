@@ -58,8 +58,6 @@ function SaveChanges() {
 
 function loadData() {
 	const data = JSON.parse(localStorage.getItem('note-data'));
-	console.log(data);
-	
 	const html = localStorage.getItem('note-html');
 	notesContainer.innerHTML = html;
 	notesContainer.querySelectorAll('.note').forEach((el, i) => {
