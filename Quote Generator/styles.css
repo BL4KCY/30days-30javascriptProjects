@@ -12,6 +12,9 @@ body {
 }
 
 .quote-card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -49,6 +52,9 @@ body {
 	justify-content: center;
 	align-items: center;
 	min-height: 200px;
+	word-break: break-all;
+	/* background-color: red; */
+	max-width: 100%;
 	font-size: 30px;
 	font-style: italic;
 	font-weight: 100;
@@ -59,10 +65,24 @@ body {
 	font-size: 40px;
 	margin-right: 1rem;
 }
+.quote-card blockquote::before {
+	width: 10px;
+	height: 10px;
+	text-align: center;
+	transform: rotate(180deg);
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+.quote-card blockquote::after {
+	position: absolute;
+	bottom: -30px;
+	right: -10px;
+}
 
 .quote-card span {
-	margin-top: 1rem;
-	float: right;
+	margin-top: 2rem;
+	align-self: self-end;
 	position: relative;
 	font-size: 1.3em;
 }
@@ -82,7 +102,7 @@ body {
 .quote-card div {
 	display: flex;
 	justify-content: center;
-	margin-top: 5rem;
+	margin-top: 2rem;
 	gap: 1rem;
 }
 
