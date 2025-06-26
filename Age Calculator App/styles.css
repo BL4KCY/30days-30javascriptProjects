@@ -85,6 +85,7 @@ header h1 span {
 
 
 #resault{
+	display: none;
 	font-size: 30px;
 	font-weight: 300;
 }
