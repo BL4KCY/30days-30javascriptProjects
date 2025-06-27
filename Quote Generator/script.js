@@ -21,7 +21,7 @@ async function randomQuote(params) {
 }
 
 function shareX() {
-	const content = encodeURIComponent("\"" + blockQuote.textContent + "\"" + '\n\n--' + author.textContent + ' 🖊️');
+	const content = encodeURIComponent("\"" + blockQuote.textContent + "\"" + '\n\n-- ' + author.textContent + ' 🖊️');
 	const url = 'https://x.com/intent/post?text=' + content
 	window.open(url, 'Tweet Window', "width=600, height=300");
 }
