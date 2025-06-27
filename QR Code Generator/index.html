@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="https://cdn-icons-png.flaticon.com/512/8307/8307515.png">
+	<link rel="stylesheet" href="styles.css">
+	<script src="https://unpkg.com/lucide@latest"></script>
+	<title>QR Code Generator</title>
+</head>
+<body>
+	<div class="container">
+		<p>Enter your text or URL</p>
+		<div>
+			<input name="text" type="text" placeholder="Text or URL">
+			<input id="color" type="color">
+		</div>
+		<img src="" alt="">
+		<button onclick="generateQrCode();"><i data-lucide="qr-code"></i>Generator QR Code</button>
+	</div>
+<script>
+	lucide.createIcons();
+</script>
+<script src="script.js"></script>
+</body>
+</html>
