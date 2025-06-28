@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="https://cdn-icons-png.flaticon.com/512/11017/11017584.png">
+	<link rel="stylesheet" href="styles.css">
+	<script src="https://unpkg.com/lucide@latest"></script>
+	<title>Sound Player</title>
+</head>
+<body>
+	<div class="container">
+		<div class="sound-player">
+			<nav id="header-nav">
+				<button><i data-lucide="arrow-left"></i></button>
+				<button><i data-lucide="menu"></i></button>
+			</nav>
+			<img id="sound-img" src="public/images/book.png">
+			<audio controls>
+				<source src="https://download.ourquraan.com/Fares_Abbad/109.mp3" type="audio/mpeg">
+				Your browser doesn't support the audio element.
+			</audio>
+		</div>
+	</div>
+<script>
+	lucide.createIcons();
+</script>
+</body>
+</html>
