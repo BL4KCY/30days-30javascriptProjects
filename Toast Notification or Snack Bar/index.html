@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="https://cdn-icons-png.flaticon.com/512/5372/5372404.png">
+	<link rel="stylesheet" href="styles.css">
+	<script src="https://unpkg.com/lucide@latest"></script>
+	<title>Toast Notification</title>
+</head>
+<body>
+	<div class="button-container">
+		<button id="suc" onclick="notif('suc');">Success</button>
+		<button id="war" onclick="notif('war');">Warning</button>
+		<button id="err" onclick="notif('err');">Error</button>
+	</div>
+	<div id="notification-box">
+	</div>
+<script src="script.js"></script>
+<script>
+	lucide.createIcons()
+</script>
+</body>
+</html>
