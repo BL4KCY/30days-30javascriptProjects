@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="https://cdn-icons-png.flaticon.com/512/610/610073.png">
+	<link rel="stylesheet" href="styles.css">
+	<script src="https://unpkg.com/lucide@latest"></script>
+	<title>Stopwatch</title>
+</head>
+<body>
+	<div class="container">
+		<h1 id="time-display">00:00:00:000</h1>
+		<div class="control">
+			<!-- <button><i data-lucide="pause"></i></button> -->
+			<button id="play-pause" onclick="playPause();"><i data-lucide="play"></i></button>
+			<!-- <button><i data-lucide="flag"></i></button> -->
+			<button id="reset-lap"  onclick="resetLap();"><i data-lucide="rotate-ccw"></i></button>
+		</div>
+		<div id="laps">
+			<div class="lap"><p>1<i data-lucide="flag-triangle-right"></i></p><p>00:00:00:000</p></div>
+			<div class="lap"><p>2<i data-lucide="flag-triangle-right"></i></p><p>00:00:00:000</p></div>
+		</div>
+	</div>
+<script src="script.js"></script>
+<script>lucide.createIcons()</script>
+</body>
+</html>

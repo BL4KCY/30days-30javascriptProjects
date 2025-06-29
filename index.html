@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Stopwatch</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: #222;
+    color: #eee;
+  }
+  #display {
+    font-size: 4rem;
+    letter-spacing: 0.1em;
+    font-weight: bold;
+    margin-bottom: 30px;
+    font-family: monospace;
+  }
+  button {
+    background: #444;
+    color: #eee;
+    border: none;
+    padding: 15px 25px;
+    margin: 0 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+  }
+  button:hover {
+    background: #666;
+  }
+  button:disabled {
+    background: #111;
+    cursor: not-allowed;
+  }
+</style>
+</head>
+<body>
+
+<div id="display">00:00:00:000</div>
+
+<div>
+  <button id="startBtn">Start</button>
+  <button id="stopBtn" disabled>Stop</button>
+  <button id="resetBtn" disabled>Reset</button>
+</div>
+
+<script>
+  let startTime = null;
+  let elapsedTime = 0;
+  let timerInterval = null;
+
+  const display = document.getElementById('display');
+  const startBtn = document.getElementById('startBtn');
+  const stopBtn = document.getElementById('stopBtn');
+  const resetBtn = document.getElementById('resetBtn');
+
+  function formatTime(time) {
+    // time is in milliseconds
+    const hours = Math.floor(time / (1000 * 60 * 60));
+    const minutes = Math.floor((time % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((time % (1000 * 60)) / 1000);
+    const milliseconds = time % 1000;
+
+    // Pad with zeros
+    const hStr = String(hours).padStart(2, '0');
+    const mStr = String(minutes).padStart(2, '0');
+    const sStr = String(seconds).padStart(2, '0');
+    const msStr = String(milliseconds).padStart(3, '0');
+
+    return `${hStr}:${mStr}:${sStr}:${msStr}`;
+  }
+
+  function updateDisplay() {
+    const now = Date.now();
+    elapsedTime = now - startTime;
+    display.textContent = formatTime(elapsedTime);
+  }
+  startBtn.addEventListener('click', () => {
+    startTime = Date.now() - elapsedTime; // Resume from elapsed time
+    timerInterval = setInterval(updateDisplay, 10);
+    startBtn.disabled = true;
+    stopBtn.disabled = false;
+    resetBtn.disabled = false;
+  });
+  stopBtn.addEventListener('click', () => {
+    clearInterval(timerInterval);
+    startBtn.disabled = false;
+    stopBtn.disabled = true;
+  });
+
+  resetBtn.addEventListener('click', () => {
+    clearInterval(timerInterval);
+    elapsedTime = 0;
+    display.textContent = "00:00:00:000";
+    startBtn.disabled = false;
+    stopBtn.disabled = true;
+    resetBtn.disabled = true;
+  });
+</script>
+
+</body>
+</html>
