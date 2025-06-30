@@ -52,6 +52,7 @@ body {
 	width: 5rem;
 	border-radius: 50%;
 	box-shadow: 0 10px 10px #0000002b;
+	cursor: pointer;
 }
 
 .control button svg {
@@ -67,7 +68,7 @@ body {
 	align-items: center;
 	width: 100%;
 	margin-bottom: 1rem;
-	max-height: 500px;
+	max-height: 700px;
 	overflow-x: hidden;
 	padding: 1rem;
 }
@@ -99,7 +100,6 @@ body {
 	align-items: center;
 	gap: 1rem;
 	font-size: 0.8em;
-	font-family: 'Poppins', sans-serif;
 	font-weight: 300;
 
 }
