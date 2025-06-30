@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="https://cdn-icons-png.flaticon.com/512/2344/2344132.png">
+	<link rel="stylesheet" href="styles.css">
+	<script src="https://unpkg.com/lucide@latest"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<title>Calculator</title>
+</head>
+<body>
+	<div id="container">
+		<input id="display" type="text" maxlength="20" readonly>
+		<button class="keys bg-purple" onclick="clearDisplay()">AC</button>
+		<button class="keys bg-purple" onclick="deleteChar()">DEL</button>
+		<button class="keys bg-purple" onclick="percent()">%</button>
+		<button class="keys bg-yellow" onclick="append('/')">÷</button>
+		<button class="keys" onclick="append('7')">7</button>
+		<button class="keys" onclick="append('8')">8</button>
+		<button class="keys" onclick="append('9')">9</button>
+		<button class="keys bg-yellow" onclick="append('*')">X</button>
+		<button class="keys" onclick="append('4')">4</button>
+		<button class="keys" onclick="append('5')">5</button>
+		<button class="keys" onclick="append('6')">6</button>
+		<button class="keys bg-yellow" onclick="append('-')">-</button>
+		<button class="keys" onclick="append('1')">1</button>
+		<button class="keys" onclick="append('2')">2</button>
+		<button class="keys" onclick="append('3')">3</button>
+		<button class="keys bg-yellow" onclick="append('+')">+</button>
+		<button class="keys" onclick="append('0')">0</button>
+		<button class="keys" onclick="append('.')">.</button>
+		<button class="keys bg-yellow" onclick="calculate()">=</button>
+	</div>
+<script>
+	lucide.createIcons();
+</script>
+<script src="script.js"></script>
+</body>
+</html>
