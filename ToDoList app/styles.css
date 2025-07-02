@@ -84,7 +84,7 @@ ul li::before {
 	background: no-repeat center url('https://cdn1.iconfinder.com/data/icons/material-core/20/check-circle-outline-blank-1024.png');
 	background-size: contain;
 	position: absolute ;
-	top: 8px;
+	top: 13px;
 	left: 8px;
 }
 
